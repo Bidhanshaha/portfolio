@@ -31,22 +31,41 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px;
             margin: 4rem auto;
         }
 
         header {
             background: var(--card-bg);
-            padding: 3rem 2rem;
+            padding: 4rem 2rem;
             border-radius: 16px;
             border: 1px solid var(--border);
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative background element for header */
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, rgba(15,23,42,0) 70%);
+            z-index: 0;
+        }
+
+        header h1, header p, header .contact-info {
+            position: relative;
+            z-index: 1;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
             background: linear-gradient(to right, #38bdf8, #818cf8);
@@ -56,7 +75,7 @@
 
         header p {
             color: var(--accent);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 500;
             margin-bottom: 1.5rem;
         }
@@ -65,8 +84,8 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 1rem;
-            font-size: 0.95rem;
+            gap: 1.5rem;
+            font-size: 1rem;
             color: var(--text-secondary);
         }
 
@@ -74,6 +93,9 @@
             color: var(--text-secondary);
             text-decoration: none;
             transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
         }
 
         .contact-info a:hover {
@@ -82,78 +104,121 @@
 
         section {
             background: var(--card-bg);
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 16px;
             border: 1px solid var(--border);
-            margin-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
             box-shadow: 0 4px 20px -5px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .section-image {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 1px solid var(--border);
         }
 
         h2 {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
             color: var(--text-primary);
-            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
 
         h2::before {
             content: '';
             display: inline-block;
             width: 8px;
-            height: 20px;
+            height: 24px;
             background: var(--accent);
             border-radius: 4px;
         }
 
         p {
             color: var(--text-secondary);
-            margin-bottom: 1rem;
+            font-size: 1.05rem;
         }
 
         .skills-container {
             display: flex;
             flex-wrap: wrap;
             gap: 0.75rem;
-            margin-top: 1rem;
         }
 
         .skill-tag {
             background: var(--accent-glow);
             color: var(--accent);
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.2rem;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 500;
             border: 1px solid rgba(56, 189, 248, 0.2);
+            transition: transform 0.2s;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            background: rgba(56, 189, 248, 0.25);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
         .project-card, .edu-item {
             background: rgba(15, 23, 42, 0.6);
-            padding: 1.25rem;
-            border-radius: 10px;
+            padding: 1.5rem;
+            border-radius: 12px;
             border: 1px solid var(--border);
-            margin-bottom: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .project-card:hover {
+            border-color: var(--accent);
         }
 
         .project-card h3, .edu-item h3 {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--text-primary);
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
         }
 
         .meta {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--accent);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 500;
         }
 
         footer {
             text-align: center;
             padding: 2rem;
             color: var(--text-secondary);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Layout specific adjustments */
+        .content-split {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .content-split > div {
+            flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .content-split {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -163,7 +228,7 @@
         <!-- Hero Header -->
         <header>
             <h1>Bidhan Shaha</h1>
-            <p>Computer Science & Engineering Student & Software Developer</p>
+            <p>Computer Science & Engineering Student | Systems & Backend Developer</p>
             <div class="contact-info">
                 <span>📍 Uttara, Dhaka</span>
                 <span>📞 01861021396</span>
@@ -174,51 +239,70 @@
 
         <!-- About Section -->
         <section>
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=80" alt="Coding Setup" class="section-image">
             <h2>About Me</h2>
-            <p>Motivated Computer Science & Engineering student with a strong academic background (CGPA: 3.77/4.00)[cite: 1] and hands-on programming skills in Python, C, and C++[cite: 1]. Passionate about solving complex problems, building software systems, and continuously expanding my technical expertise.</p>
+            <p>I am a Computer Science & Engineering student at IUBAT[cite: 1] with a deep passion for backend development, systems architecture, and database design. Beyond my core academic coursework, I actively explore Linux system administration, build complex C++ algorithms[cite: 1], and apply analytical problem-solving to understand data trends in financial markets. Whether I am drafting entity-relationship logic for a new application or optimizing CPU scheduling code, I thrive on translating complex logic into clean, efficient, and scalable solutions.</p>
         </section>
 
         <!-- Skills Section -->
         <section>
-            <h2>Tech Stack & Skills</h2>
+            <h2>Core Competencies</h2>
             <div class="skills-container">
+                <span class="skill-tag">C / C++</span>
                 <span class="skill-tag">Python</span>
-                <span class="skill-tag">C</span>
-                <span class="skill-tag">C++</span>
+                <span class="skill-tag">Linux System Administration</span>
+                <span class="skill-tag">Database Architecture</span>
                 <span class="skill-tag">HTML / CSS</span>
+                <span class="skill-tag">Algorithm Design</span>
                 <span class="skill-tag">Git</span>
-                <span class="skill-tag">Blockchain Basics</span>
-                <span class="skill-tag">Problem Solving</span>
             </div>
         </section>
 
         <!-- Projects Section -->
         <section>
             <h2>Featured Projects</h2>
-            <div class="project-card">
-                <h3>Student Attendance Management System</h3>
-                <p class="meta">Language: C++</p>
-                <p>Designed and built a console-based system tailored for efficiently recording, tracking, and analyzing student attendance data[cite: 2].</p>
-            </div>
-            <div class="project-card">
-                <h3>Algorithmic Problem Solving</h3>
-                <p class="meta">Platforms: Codeforces & More</p>
-                <p>Consistently solving competitive programming and data structure problems to sharpen logic and coding efficiency[cite: 2].</p>
+            <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?auto=format&fit=crop&w=900&q=80" alt="Code on Screen" class="section-image" style="height: 200px;">
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Student Attendance Management System</h3>
+                    <p class="meta">Language: C++</p>
+                    <p>Designed and built a robust console-based system tailored for recording, tracking, and accurately analyzing student attendance records[cite: 2].</p>
+                </div>
+                <div class="project-card">
+                    <h3>Food Ordering Database Architecture</h3>
+                    <p class="meta">Systems Analysis</p>
+                    <p>Designed comprehensive Entity-Relationship (ER) diagrams establishing primary keys, inventory management logic, and order processing constraints.</p>
+                </div>
+                <div class="project-card">
+                    <h3>CPU Scheduling Simulator</h3>
+                    <p class="meta">Language: C++</p>
+                    <p>Developed core algorithms to simulate operating system process handling, successfully implementing FCFS, SJF, and SRT scheduling logic.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Algorithmic Problem Solving</h3>
+                    <p class="meta">Platforms: Codeforces & GitHub</p>
+                    <p>Consistently solving competitive programming and data structure problems to sharpen logic and code execution efficiency[cite: 2].</p>
+                </div>
             </div>
         </section>
 
         <!-- Education Section -->
         <section>
-            <h2>Education</h2>
-            <div class="edu-item">
-                <h3>Bachelor of Science in Computer Science & Engineering (BSc in CSE)</h3>
-                <p class="meta">International University of Business Agriculture & Technology (IUBAT) | Expected Aug 2027</p>
-                <p>Current CGPA: 3.77/4.00 • Merit Scholarship Awardee (2024)[cite: 1]</p>
+            <div class="content-split">
+                <div>
+                    <h2>Education Background</h2>
+                    <div class="edu-item" style="margin-top: 1rem;">
+                        <h3>BSc in Computer Science & Engineering</h3>
+                        <p class="meta">IUBAT, Dhaka | Expected Aug 2027</p>
+                        <p>Current CGPA: 3.77/4.00 • Merit Scholarship Awardee (2024)[cite: 1]</p>
+                    </div>
+                </div>
+                <img src="https://images.unsplash.com/photo-1526379095098-d400fd0bfce8?auto=format&fit=crop&w=400&q=80" alt="Circuit Board" class="section-image" style="height: 200px; width: auto; flex: 1;">
             </div>
         </section>
 
         <footer>
-            <p>&copy; 2026 Bidhan Shaha. Built with clean code & modern design.</p>
+            <p>&copy; 2026 Bidhan Shaha. Designed for high performance.</p>
         </footer>
     </div>
 
