@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidhan Shaha - Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --dark-color: #1e293b;
+            --light-color: #f8fafc;
+            --gray-color: #64748b;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        header p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            margin-bottom: 1.5rem;
+        }
+        .contact-links a {
+            color: #38bdf8;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        .contact-links a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.75rem;
+        }
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        .skill-card {
+            background: #f1f5f9;
+            padding: 1rem;
+            border-radius: 6px;
+        }
+        .skill-card h3 {
+            font-size: 1rem;
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Bidhan Shaha</h1>
+        <p>Computer Science & Engineering Student | Software Developer</p>
+        <div class="contact-links">
+            <span>Uttara, Dhaka</span> | 
+            <span>01861021396</span> | 
+            <a href="mailto:bidhanshaha27@gmail.com">Email</a> | 
+            <a href="https://linkedin.com/in/shaha-bidhan" target="_blank">LinkedIn</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- About Section -->
+        <section>
+            <h2>Professional Summary</h2>
+            <p>Motivated Computer Science & Engineering student with a strong academic record (Current CGPA: 3.77/4.00, Present) and hands-on skills in Python, C, C++, and web development. Certified in Blockchain Technology and experienced in academic projects, like an attendance management system. Eager to apply problem-solving skills and technical knowledge in an internship while continuing to learn and grow.</p>
+        </section>
+
+        <!-- Skills Section -->
+        <section>
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Programming</h3>
+                    <p>Python, C, C++</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Emerging Tech</h3>
+                    <p>Basics of Blockchain</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Tools & Software</h3>
+                    <p>Microsoft Office, Git (basic)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section>
+            <h2>Education</h2>
+            <ul>
+                <li><strong>Bachelor of Computer Science & Engineering (BSc in CSE)</strong> - International University of Business Agriculture & Technology (IUBAT), Dhaka (Expected Aug 2027) <br>Current CGPA: 3.77/4.00 | Merit Scholarship Awardee (2024)</li>
+                <li><strong>Higher Secondary Certificate (HSC), Science</strong> - Gazipur Cantonment College, Gazipur (2022) <br>GPA: 5.00/5.00 | Government Scholarship (General Category)</li>
+                <li><strong>Secondary School Certificate (SSC), Science</strong> - Shafipur Ideal Public School & College, Gazipur (2020) <br>GPA: 5.00/5.00 | Government Scholarship (Talent Pool Category)</li>
+            </ul>
+        </section>
+
+        <!-- Projects Section -->
+        <section>
+            <h2>Projects & Coursework</h2>
+            <ul>
+                <li><strong>Student Attendance Management System (C++):</strong> Developed a console-based system for recording and analyzing student attendance.</li>
+                <li><strong>Problem-Solving Practice (C, C++):</strong> Solved algorithmic problems on platforms like Codeforces.</li>
+            </ul>
+        </section>
+
+        <!-- Certifications & Experience -->
+        <section>
+            <h2>Certifications & Experience</h2>
+            <ul>
+                <li><strong>Certification:</strong> Basics of Blockchain Technology - UniAthena & Cambridge International Qualifications (Aug 2025)</li>
+                <li><strong>Tutoring:</strong> Guided local students in math and science, building self-confidence and improving exam performance.</li>
+                <li><strong>Volunteering:</strong> Science & Space Dreamers (SSD), Dhaka - Engaged in science awareness programs and community support activities.</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Bidhan Shaha. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
